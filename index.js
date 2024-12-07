@@ -20,8 +20,7 @@ const hotelRoutes = require("./routes/hotels");
 const reviewsRoutes = require("./routes/reviews");
 const { log } = require("console");
 const mongoSanitize = require("express-mongo-sanitize");
-const dbUrl = process.env.DB_URL;
-const mongourl = "mongodb://localhost:27017/hotel";
+const mongourl = process.env.DB_URL || "mongodb://localhost:27017/hotel";
 const MongoStore = require("connect-mongo");
 mongoose.connect(mongourl);
 

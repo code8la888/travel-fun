@@ -14,6 +14,7 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
 const helmet = require("helmet");
+const secret = process.env.SECRET;
 
 const userRoutes = require("./routes/users");
 const hotelRoutes = require("./routes/hotels");
@@ -51,7 +52,7 @@ const store = MongoStore.create({
   mongoUrl: mongourl,
   touchAfter: 24 * 60 * 60,
   crypto: {
-    secret: "12345",
+    secret,
   },
 });
 
@@ -62,7 +63,7 @@ store.on("error", function (e) {
 const sessionConfig = {
   store,
   name: "session", //更改預設名稱
-  secret: "12345",
+  secret,
   resave: false,
   saveUninitialized: true,
   cookie: {

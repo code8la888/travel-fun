@@ -31,13 +31,13 @@ map.on("load", function () {
       "circle-color": [
         "step",
         ["get", "point_count"],
-        "red",
-        10,
-        "yellow",
-        30,
-        "orange",
+        "rgb(160, 206, 255)",
+        100,
+        "rgb(121, 187, 255)",
+        750,
+        "rgb(51, 126, 204)",
       ],
-      "circle-radius": ["step", ["get", "point_count"], 20, 10, 30, 30, 40],
+      "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40],
     },
   });
 
@@ -59,9 +59,9 @@ map.on("load", function () {
     source: "hotel",
     filter: ["!", ["has", "point_count"]],
     paint: {
-      "circle-color": "yellow",
-      "circle-radius": 10,
-      "circle-stroke-width": 3,
+      "circle-color": "rgb(216, 235, 255)",
+      "circle-radius": 5,
+      "circle-stroke-width": 1,
       "circle-stroke-color": "white",
     },
   });

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Hotel = require("../models/hotel");
-const hotels = require("./test");
+const hotels = require("./hotels");
 
 mongoose.connect("mongodb://localhost:27017/hotel");
 

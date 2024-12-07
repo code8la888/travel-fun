@@ -1,0 +1,31 @@
+<nav class="navbar sticky-top navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Hotels.com</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/hotels">Hotels</a>
+        <a class="nav-link" href="/hotels/new">New Hotel</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <% if(!currentUser) {%>
+        <a class="nav-link" href="/login">登入</a>
+        <a class="nav-link" href="/register">註冊</a>
+        <% }else{ %>
+        <a class="nav-link" href="/logout">登出</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,101 @@
+<% layout('layouts/boilerplate') %>
+<div class="row">
+  <h1 class="text-center">新增民宿 & 飯店資訊:</h1>
+  <div class="col-md-6 offset-md-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <form
+          action="/hotels"
+          method="POST"
+          novalidate
+          class="validated-form"
+          enctype="multipart/form-data"
+        >
+          <div class="mb-3">
+            <label class="form-label" for="Name">飯店名稱:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="Name"
+              name="hotel[Name]"
+              required
+            />
+            <div class="valid-feedback">輸入正確!</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="Location">飯店位置:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="Location"
+              name="hotel[Location]"
+              required
+            />
+            <div class="valid-feedback">輸入正確!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="Description">飯店描述:</label>
+            <textarea
+              class="form-control"
+              type="text"
+              id="Description"
+              name="hotel[Description]"
+              required
+            ></textarea>
+            <div class="valid-feedback">輸入正確!</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="LowestPrice">最低價格:</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="LowestPrice">$NT</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="0"
+                aria-label="LowestPrice"
+                aria-describedby="LowestPrice"
+                id="LowestPrice"
+                name="hotel[LowestPrice]"
+                required
+              />
+              <div class="valid-feedback">輸入正確!</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="CeilingPrice">最高價格:</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="CeilingPrice-label">$NT</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="0"
+                aria-label="CeilingPrice"
+                aria-describedby="CeilingPrice-label"
+                id="CeilingPrice"
+                name="hotel[CeilingPrice]"
+                required
+              />
+              <div class="valid-feedback">輸入正確!</div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="Image">添加更多圖片:</label>
+            <input
+              class="form-control"
+              type="file"
+              id="Image"
+              name="hotel[Images]"
+              multiple
+            />
+          </div>
+
+          <div class="mb-3">
+            <button class="btn btn-success">新增民宿 & 飯店資訊</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="/hotels">返回所有民宿飯店資訊</a>

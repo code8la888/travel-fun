@@ -2,6 +2,10 @@
   transition: none !important; /* 禁用滑動動畫 */
 }
 
+li i {
+  color: #0d6efd;
+}
+
 .starability-result {
   position: relative;
   width: 150px;

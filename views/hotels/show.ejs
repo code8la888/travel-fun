@@ -60,44 +60,52 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-        <i class="bi bi-geo-alt text-danger"></i> <%= hotel.Location %>
+        <i class="bi bi-geo-alt"></i> <%= hotel.Location %>
       </li>
       <li class="list-group-item">
-        <i class="bi bi-telephone-fill text-primary"></i> 連絡電話： <%=
-        hotel.Tel %>
+        <i class="bi bi-telephone-fill"></i> 連絡電話： <%= hotel.Tel %>
       </li>
       <li class="list-group-item">
-        <i class="bi bi-coin text-warning"></i>
+        <i class="bi bi-browser-safari"></i> 官方網站： <%if(hotel.Website){ %>
+        <a href="<%=hotel.Website%>" class="text-muted"><%=hotel.Website%></a>
+        <%}else{%> 無 <%}%>
+      </li>
+      <li class="list-group-item">
+        <i class="bi bi-coin"></i>
         最高房價
         <span class="badge bg-danger text-white"
           >NT$ <%= hotel.CeilingPrice %> /晚</span
         >
       </li>
       <li class="list-group-item">
-        <i class="bi bi-coin text-warning"></i>
+        <i class="bi bi-coin"></i>
         最低房價
         <span class="badge bg-success text-white"
           >NT$ <%= hotel.LowestPrice %> /晚</span
         >
       </li>
       <li class="list-group-item">
-        <i class="bi bi-info-circle text-primary"></i>
+        <i class="bi bi-info-circle"></i>
         服務資訊： <%= hotel.Serviceinfo|| `入住時間：下午 3:00
         後，退房時間：上午 11:00 前` %>
       </li>
       <li class="list-group-item">
-        <i class="bi bi-car-front-fill text-success"></i>
-        停車資訊： <%= hotel.Parkinginfo.slice(3) %>
+        <i class="bi bi-car-front-fill"></i>
+        停車資訊： <%= hotel.Parkinginfo %>
       </li>
     </ul>
   </div>
 
-  <h4 class="text-center fw-bold text-primary">地圖資訊</h4>
+  <h4 class="text-center fw-bold text-primary">
+    <i class="bi bi-pin-map-fill"></i> 地圖資訊
+  </h4>
   <div id="map" class="w-100 rounded-2 my-3"></div>
-  <h4 class="text-center fw-bold text-primary">評論留言</h4>
+  <h4 class="text-center fw-bold text-primary">
+    <i class="bi bi-chat-left-text"></i> 留言評論
+  </h4>
   <div class="w-100 my-3">
     <% if(currentUser){ %>
-    <!-- 新增按鈕來打開模態框 -->
+
     <button
       class="btn btn-info my-3"
       data-bs-toggle="modal"

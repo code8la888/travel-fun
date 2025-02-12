@@ -1,7 +1,7 @@
 <% layout('layouts/boilerplate') %>
 <div class="row">
-  <h1 class="text-center">編輯民宿飯店資訊:</h1>
-  <div class="col-md-6 offset-md-3">
+  <h1 class="text-center">編輯民宿飯店資訊：</h1>
+  <div class="col-md-10 offset-md-1">
     <div class="card shadow">
       <div class="card-body">
         <form
@@ -12,7 +12,7 @@
           enctype="multipart/form-data"
         >
           <div class="mb-3">
-            <label class="form-label" for="Name">飯店名稱:</label>
+            <label class="form-label" for="Name">飯店名稱：</label>
             <input
               class="form-control"
               type="text"
@@ -23,7 +23,7 @@
             />
           </div>
           <div class="mb-3">
-            <label class="form-label" for="Location">飯店位置:</label>
+            <label class="form-label" for="Location">飯店位置：</label>
             <input
               class="form-control"
               type="text"
@@ -34,7 +34,29 @@
             />
           </div>
           <div class="mb-3">
-            <label class="form-label" for="Description">飯店描述:</label>
+            <label class="form-label" for="Tel">連絡電話：</label>
+            <input
+              class="form-control"
+              type="text"
+              id="Tel"
+              name="hotel[Tel]"
+              value="<%=hotel.Tel %>"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="WebsiTe">官方網站：</label>
+            <input
+              class="form-control"
+              type="text"
+              id="Website"
+              name="hotel[Website]"
+              value="<%=hotel.Website %>"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="Description">飯店描述：</label>
             <textarea
               class="form-control"
               type="text"
@@ -46,7 +68,7 @@
             </textarea>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="LowestPrice">最低價格:</label>
+            <label class="form-label" for="LowestPrice">最低價格：</label>
             <div class="input-group mb-3">
               <span class="input-group-text" id="LowestPrice">$NT</span>
               <input
@@ -63,7 +85,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="CeilingPrice">最高價格:</label>
+            <label class="form-label" for="CeilingPrice">最高價格：</label>
             <div class="input-group mb-3">
               <span class="input-group-text" id="CeilingPrice-label">$NT</span>
               <input
@@ -80,7 +102,37 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label" for="Image">上傳圖片:</label>
+            <label class="form-label" for="Serviceinfo">服務資訊：</label>
+            <div class="input-group mb-3">
+              <textarea
+                type="text"
+                class="form-control"
+                id="Serviceinfo"
+                name="hotel[Serviceinfo]"
+                required
+              >
+<%=hotel.Serviceinfo%>
+</textarea
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="Parkinginfo">停車資訊：</label>
+            <div class="input-group mb-3">
+              <textarea
+                type="text"
+                class="form-control"
+                id="Parkinginfo"
+                name="hotel[Parkinginfo]"
+                required
+              >
+<%=hotel.Parkinginfo%>
+</textarea
+              >
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="Image">上傳圖片：</label>
             <input
               class="form-control"
               type="file"

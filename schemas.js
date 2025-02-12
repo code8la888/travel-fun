@@ -31,6 +31,10 @@ module.exports.hotelSchema = Joi.object({
     Description: Joi.string().required().escapeHTML(),
     LowestPrice: Joi.number().required().min(0),
     CeilingPrice: Joi.number().required().min(Joi.ref("LowestPrice")),
+    Serviceinfo: Joi.string().required().escapeHTML(),
+    Parkinginfo: Joi.string().required().escapeHTML(),
+    Tel: Joi.string().required().escapeHTML(),
+    Website: Joi.string().required().escapeHTML(),
   }).required(),
   deleteImages: Joi.array(),
 });

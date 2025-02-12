@@ -34,6 +34,10 @@ const seedDB = async () => {
       Location: h.Add,
       LowestPrice: h.LowestPrice,
       CeilingPrice: h.CeilingPrice,
+      Serviceinfo: h.Serviceinfo,
+      Parkinginfo: h.Parkinginfo,
+      Tel: h.Tel,
+      Website: h.Website,
       Images: images,
       geometry: { type: "Point", coordinates: [h.Px, h.Py] },
     });

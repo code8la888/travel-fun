@@ -19,9 +19,9 @@ const secret = process.env.SECRET;
 const userRoutes = require("./routes/users");
 const hotelRoutes = require("./routes/hotels");
 const reviewsRoutes = require("./routes/reviews");
-const { log } = require("console");
 const mongoSanitize = require("express-mongo-sanitize");
 const mongourl = process.env.DB_URL || "mongodb://localhost:27017/hotel";
+// const mongourl = "mongodb://localhost:27017/hotel";
 const MongoStore = require("connect-mongo");
 mongoose.connect(mongourl);
 
@@ -97,7 +97,7 @@ const connectSrcUrls = [
   "https://api.maptiler.com/", // add this
 ];
 
-const fontSrcUrls = [];
+const fontSrcUrls = ["https://cdn.jsdelivr.net", "https://fonts.gstatic.com"];
 
 app.use(
   helmet.contentSecurityPolicy({

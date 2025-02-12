@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review");
 const User = require("./user");
-const { required } = require("joi");
-const { coordinates } = require("@maptiler/client");
 
 const ImageSchema = new Schema({
   url: String,
@@ -23,6 +21,10 @@ const hotelSchema = new Schema(
     CeilingPrice: Number,
     Description: String,
     Location: String,
+    Serviceinfo: String,
+    Parkinginfo: String,
+    Tel: String,
+    Website: String,
     Images: [ImageSchema],
     Author: {
       type: Schema.Types.ObjectId,

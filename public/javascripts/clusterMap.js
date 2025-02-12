@@ -32,12 +32,12 @@ map.on("load", function () {
         "step",
         ["get", "point_count"],
         "rgb(160, 206, 255)",
-        100,
+        5,
         "rgb(121, 187, 255)",
-        750,
+        10,
         "rgb(51, 126, 204)",
       ],
-      "circle-radius": ["step", ["get", "point_count"], 20, 100, 30, 750, 40],
+      "circle-radius": ["step", ["get", "point_count"], 20, 5, 30, 10, 40],
     },
   });
 

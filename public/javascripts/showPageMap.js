@@ -1,5 +1,3 @@
-// const hotel = require("../../models/hotel");
-
 maptilersdk.config.apiKey = maptilerApiKey;
 
 const map = new maptilersdk.Map({

@@ -13,7 +13,7 @@ module.exports.createReview = async (req, res) => {
 
 module.exports.deleteReview = async (req, res) => {
   const { id, reviewId } = req.params;
-  Hotel.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
+  Hotel.findByIdAndUpdate(id, { $pull: { Reviews: reviewId } });
   await Review.findByIdAndDelete(reviewId);
   req.flash("success", "成功刪除評論");
   res.redirect(`/hotels/${id}`);

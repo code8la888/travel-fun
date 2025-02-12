@@ -1,34 +1,35 @@
 <% layout('layouts/boilerplate') %>
-<div id="cluster-map"></div>
-<h1>全臺旅館民宿一覽表:</h1>
-<ol>
-  <% for(let hotel of hotels){ %>
-  <div class="card mb-3">
-    <div class="row">
-      <div class="col-md-4">
-        <img
-          crossorigin="anonymous"
-          class="img-fluid"
-          src="<%= hotel.Images && hotel.Images.length > 0 ? hotel.Images[0].url : 'https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' %>"
-          alt=""
-          width="100%"
-        />
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><%= hotel.Name %></h5>
-          <p class="card-text"><%= hotel.Description %></p>
-          <p class="card-text text-muted">地址: <%= hotel.Location %></p>
-          <a class="btn btn-primary" href="/hotels/<%= hotel._id %>"
-            >查看更多...</a
-          >
+<link rel="stylesheet" href="/stylesheets/index.css" />
+<div class="main-content">
+  <div class="text-center"><h1>全臺旅館民宿推薦一覽表:</h1></div>
+  <div id="cluster-map"></div>
+  <div class="info">
+    <% for(let hotel of hotels){ %>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            crossorigin="anonymous"
+            class="img-fluid"
+            src="<%= hotel.Images && hotel.Images.length > 0 ? hotel.Images[0].url : 'https://images.unsplash.com/photo-1517840901100-8179e982acb7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' %>"
+            alt="hotel image"
+          />
+        </div>
+        <div class="col-md-6">
+          <div class="card-body">
+            <h5 class="card-title"><%= hotel.Name %></h5>
+            <p class="card-text text-muted">地址: <%= hotel.Location %></p>
+            <a class="btn btn-primary" href="/hotels/<%= hotel._id %>"
+              >查看更多...</a
+            >
+          </div>
         </div>
       </div>
     </div>
+    <%}%>
   </div>
-  <%}%>
-</ol>
-<a href="/hotels/new">新增民宿飯店資訊</a>
+  <a href="/hotels/new">新增推薦民宿、飯店</a>
+</div>
 
 <script>
   const maptilerApiKey = "<%- process.env.MAPTILER_API_KEY %>";

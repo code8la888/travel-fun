@@ -20,8 +20,10 @@ const userRoutes = require("./routes/users");
 const hotelRoutes = require("./routes/hotels");
 const reviewsRoutes = require("./routes/reviews");
 const mongoSanitize = require("express-mongo-sanitize");
-const mongourl = process.env.DB_URL || "mongodb://localhost:27017/hotel";
+// const mongourl = process.env.DB_URL || "mongodb://localhost:27017/hotel";
 // const mongourl = "mongodb://localhost:27017/hotel";
+const mongourl =
+  "mongodb+srv://kazuhaha1997:CioT8ihUvqVEqpHo@cluster0.doghf.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0";
 const MongoStore = require("connect-mongo");
 mongoose.connect(mongourl);
 
@@ -91,11 +93,9 @@ const styleSrcUrls = [
   "https://fonts.googleapis.com/",
   "https://use.fontawesome.com/",
   "https://cdn.jsdelivr.net",
-  "https://cdn.maptiler.com/", // add this
+  "https://cdn.maptiler.com/",
 ];
-const connectSrcUrls = [
-  "https://api.maptiler.com/", // add this
-];
+const connectSrcUrls = ["https://api.maptiler.com/"];
 
 const fontSrcUrls = ["https://cdn.jsdelivr.net", "https://fonts.gstatic.com"];
 
@@ -112,10 +112,12 @@ app.use(
         "'self'",
         "blob:",
         "data:",
-        "https://res.cloudinary.com/ddmaqiu3h/", //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
+        "https://res.cloudinary.com/ddmaqiu3h/",
         "https://images.unsplash.com/",
         "https://api.maptiler.com/",
         "https://taiwan.taiwanstay.net.tw",
+        "https://fastly.picsum.photos", // 真正顯示圖片的來源
+        "https://picsum.photos", // 用來產生圖片的主站
       ],
       fontSrc: ["'self'", ...fontSrcUrls],
     },

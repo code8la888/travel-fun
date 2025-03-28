@@ -20,10 +20,10 @@ const userRoutes = require("./routes/users");
 const hotelRoutes = require("./routes/hotels");
 const reviewsRoutes = require("./routes/reviews");
 const mongoSanitize = require("express-mongo-sanitize");
-// const mongourl = process.env.DB_URL || "mongodb://localhost:27017/hotel";
+const mongourl = process.env.DB_URL || "mongodb://localhost:27017/hotel";
 // const mongourl = "mongodb://localhost:27017/hotel";
-const mongourl =
-  "mongodb+srv://kazuhaha1997:CioT8ihUvqVEqpHo@cluster0.doghf.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0";
+// const mongourl =
+//   "mongodb+srv://kazuhaha1997:CioT8ihUvqVEqpHo@cluster0.doghf.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0";
 const MongoStore = require("connect-mongo");
 mongoose.connect(mongourl);
 
